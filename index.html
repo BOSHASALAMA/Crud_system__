@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Project</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <h1 class="fw-bolder py-4 ">Client Management System</h1>
+
+        <div>
+<ul id="errorList">
+    <li class="alert-danger d-none  mb-2 p-3" id="nameError"></li>
+    <li class="alert-danger d-none  mb-2 p-3" id = "priceError"></li>
+    <li class="alert-danger d-none  mb-2 p-3" id = "categoryError"></li>
+    <li class="alert-danger d-none  mb-2 p-3" id="descError"></li>
+    <li class="alert-danger d-none  mb-2 p-3" id="paiedError"></li>
+
+</ul>
+        </div>
+
+        <label for="productNameInput" >Client Name : </label>
+        <input  oninput="validateName()" type="text" id="productNameInput" class="form-control mb-3 ">
+
+        <label for="productPriceInput"> Age : </label>
+        <input oninput="validatePrice()" type="number" id="productPriceInput" class="form-control mb-3">
+
+        <label for="productCategoryInput">Date: </label>
+        <input oninput="validateCategory()" type="text" id="productCategoryInput" class="form-control mb-3">
+
+        <label for="productDescInput">Phone Number: </label>
+        <input placeholder="" oninput="validateDesc()" type="text" id="productDescInput" class="form-control mb-3"> 
+        
+        <label for="productpaiedInput"> paied : </label>
+        <input oninput="validatePaied()" type="number" id="productpaiedInput" class="form-control mb-3" >
+        
+        <button id = "addBtn" onclick=" addProduct(); " class=" btn btn-outline-info text-info">Add Client</button>
+        <button id = "ubdateBtn" onclick=" ubdate(); "   class=" btn d-none btn-outline-primary text-primary">update</button>
+<div class="p-4 ">
+<label for="search"> </label>
+    <input oninput="searchProducts(this.value)" type="text" placeholder="search by name" id = "search" class=" search form-control">
+</div>
+
+
+
+
+        <table class="table mt-2 ">
+            <thead>
+                <th>index</th>
+                <th>Client Name </th>
+                <th>Age</th>
+                <th>Date</th>
+                <th>Phone Number</th>
+                <th>paied</th>
+                <th>ubdate</th>
+                <th>delete</th>
+                
+            </thead>
+            <tbody id = 'tableBody'>
+             
+            </tbody>
+        </table>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    new Darkmode().showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+  const options = {
+    saveInCookies: false, // default: true,
+
+label: '🌓', // default: ''
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+</script>
+    <script src="js/main.js"></script>
+</body>
+</html>
