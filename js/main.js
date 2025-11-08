@@ -621,7 +621,7 @@ function validateDesc()
     {
 
     
-    var regex = /[0-9]{11,13}$/ ;
+    var regex = /^01(2|0|1|5)\d{8}$/ ;
 
    if(regex.test(productDescInput.value)  == true )
    {
